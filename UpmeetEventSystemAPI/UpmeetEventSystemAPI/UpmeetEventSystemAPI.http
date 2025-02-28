@@ -1,0 +1,6 @@
+@UpmeetEventSystemAPI_HostAddress = http://localhost:5147
+
+GET {{UpmeetEventSystemAPI_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
