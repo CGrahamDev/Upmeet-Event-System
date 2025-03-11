@@ -1,0 +1,15 @@
+
+
+
+.events{
+    display:inline-block;
+    border-style: solid;
+    background-color:#F0F0F0;
+    text-align:center;
+    margin: 1em;
+}
+.content{
+    border-style:groove;
+   border-radius: 2px;
+   background-color: #e0e0e0;
+}

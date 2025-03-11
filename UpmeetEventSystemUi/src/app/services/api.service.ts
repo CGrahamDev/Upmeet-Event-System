@@ -20,6 +20,9 @@ export class ApiService {
   getFavorites(){
     return this.http.get(`${this.baseUrl}/Favorites`);
   }
+  getFavoritesById(userId: number){
+    return this.http.get((`${this.baseUrl}/Events/${userId}`));
+  }
   addToFavorites(favorite: Favorite){
     return this.http.post(`${this.baseUrl}/Favorites`, favorite)
   }
