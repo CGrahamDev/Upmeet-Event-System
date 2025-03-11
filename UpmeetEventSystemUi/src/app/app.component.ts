@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { RouterLink, RouterOutlet } from '@angular/router';
+import { HomeComponent } from "./home/home.component";
 
 @Component({
   selector: 'app-root',
@@ -9,5 +10,5 @@ import { RouterLink, RouterOutlet } from '@angular/router';
   styleUrl: './app.component.css'
 })
 export class AppComponent {
-  title = 'UpmeetEventSystemUi';
+  title = 'UpmeetEventSystem';
 }

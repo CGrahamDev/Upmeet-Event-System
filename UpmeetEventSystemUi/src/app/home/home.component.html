@@ -1,0 +1,16 @@
+<h1>Events For You</h1>
+<hr>
+<!--
+<div *ngFor="let event of events">
+    <h2>{{event.title}}</h2>
+    EVENT IMAGE MAYBE?
+    <p>{{event.description}}</p>
+    <h3>{{event.date}}, {{event.location}}</h3>
+</div>
+-->
+
+<ul>
+    <li *ngFor="let event of events">EVENT #
+        {{event.title}}, {{event.description}}, {{event.date}}, 
+    </li>
+</ul>

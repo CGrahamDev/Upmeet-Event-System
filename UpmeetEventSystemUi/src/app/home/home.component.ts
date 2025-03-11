@@ -1,7 +1,8 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
-import { AppComponent } from '../../app.component';
-import { ApiService } from '../../api.service';
+import { AppComponent } from '../app.component';
+import { ApiService } from '../services/api.service';
+import { Event } from '../Interfaces/event';
 
 @Component({
   selector: 'app-home',
@@ -10,13 +11,15 @@ import { ApiService } from '../../api.service';
   styleUrl: './home.component.css'
 })
 export class HomeComponent implements OnInit {
-events: any[] = [];
+events: Event[] = [];
 
 constructor(private apiService: ApiService){};
 
 ngOnInit(): void {
     this.apiService.getEvents().subscribe(data => {
-      this.events = data as any[];
-    })
-}
+      this.events = data as Event[];
+    })}
+
+
+
 }
