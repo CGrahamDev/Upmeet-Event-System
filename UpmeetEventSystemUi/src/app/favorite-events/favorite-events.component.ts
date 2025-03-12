@@ -14,10 +14,12 @@ import { FormsModule } from '@angular/forms';
 export class FavoriteEventsComponent implements OnInit {
 favorites: Favorite[] = [];
 events: Event[] = [];
+event: Event = {id:-1,title:'',description:'',date:'',location:''};
 userId: number = 1;
 eventId: number = 0;
 favoriteId: number = 0;
-  constructor(private apiService: ApiService){};
+  
+constructor(private apiService: ApiService){};
 
 ngOnInit(): void {
     this.apiService.getFavorites(this.userId).subscribe(data => {

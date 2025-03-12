@@ -6,6 +6,6 @@ import { EventsFormComponent } from './events-form/events-form.component';
 export const routes: Routes = [
     {path:'Home', component: HomeComponent},
     {path:'Favorites', component:FavoriteEventsComponent},
-    //{path:'Plan', component:EventsFormComponent},
+    {path:'PlanEvent', component:EventsFormComponent},
     {path: '', redirectTo: 'Home', pathMatch: 'full'}, //Default Route
 ];

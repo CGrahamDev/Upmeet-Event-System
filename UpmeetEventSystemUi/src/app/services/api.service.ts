@@ -14,7 +14,11 @@ export class ApiService {
     return this.http.get(`${this.baseUrl}/Events`);
     //CONSIDER CREATING AN EVENT INTERFACE
   }
-  createEvents(event: Event ){
+  getEventById(id: number){
+    return this.http.get(`${this.baseUrl}/Events/${id}`);
+    //CONSIDER CREATING AN EVENT INTERFACE
+  }
+  createEvent(event: any ){
     return this.http.post(`${this.baseUrl}/Events`, event);
   }
   getFavorites(userId: number){
