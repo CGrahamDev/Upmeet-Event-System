@@ -10,7 +10,8 @@
    <form (submit)="addToFavorites()" [hidden]="!event.isHidden">
     <label for="userId"> User ID:</label>
     <input type="number" id="userId" [(ngModel)]="userId" name="userId" required>
-    <input type="number" id="eventId" name="eventId" [(ngModel)]="event.Id" >Event ID:{{event.Id}}
+    <label for="eventId">Event ID:</label>
+    <input readonly type="number" id="eventId" name="eventId" value="{{event.id}}"  >
     <button type="submit">Add to favorites</button> 
    </form>
    
