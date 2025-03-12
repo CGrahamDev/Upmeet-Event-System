@@ -14,13 +14,14 @@ export class HomeComponent implements OnInit {
 events: any[] = [];
 favorites: any[] = [];
 items : any[] = []
+userId: number = 1;
 constructor(private apiService: ApiService){};
 
 ngOnInit(): void {
     this.apiService.getEvents().subscribe(data => {
       this.events = data as any[];})
       this.items = this.items.map(item => item.isHidden = true)
-    this.apiService.getFavorites().subscribe(data => {
+    this.apiService.getFavorites(this.userId).subscribe(data => {
       this.favorites = data as any[];
     })
     

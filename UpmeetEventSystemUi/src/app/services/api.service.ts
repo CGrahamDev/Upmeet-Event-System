@@ -17,15 +17,14 @@ export class ApiService {
   createEvents(event: Event ){
     return this.http.post(`${this.baseUrl}/Events`, event);
   }
-  getFavorites(){
-    return this.http.get(`${this.baseUrl}/Favorites`);
+  getFavorites(userId: number){
+    return this.http.get(`${this.baseUrl}/Favorites?userId=${userId}`);
   }
-  getFavoritesById(userId: number){
-    return this.http.get((`${this.baseUrl}/Events/${userId}`));
+  addToFavorites(userId: number, eventId: number){
+    return this.http.post(`${this.baseUrl}/Favorites`, userId)
   }
-  addToFavorites(favorite: Favorite){
-    return this.http.post(`${this.baseUrl}/Favorites`, favorite)
+  removeFromFavorites(favoriteId: number, userId: number){
+    return this.http.delete(`${this.baseUrl}/Favorites/${favoriteId}?userId=${userId}`)
   }
-
 
 }
