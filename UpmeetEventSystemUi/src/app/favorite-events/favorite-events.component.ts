@@ -28,13 +28,18 @@ ngOnInit(): void {
     })
 }
 addToFavorites(): void{
-  this.apiService.addToFavorites(this.userId, this.eventId).subscribe(() => {
+  this.apiService.addToFavorites(
+    {
+      userId: this.userId,
+      eventId: this.eventId
+    }
+  ).subscribe(() => {
     alert('Event was successfully added to your favorites');
   })
 }
 
 removeFromFavorite(): void{
-  this.apiService.removeFromFavorites(this.userId, this.favoriteId).subscribe(() => {
+  this.apiService.removeFromFavorites(this.favoriteId, this.userId ).subscribe(() => {
     alert('Event was removed from favorites')
   })
 }

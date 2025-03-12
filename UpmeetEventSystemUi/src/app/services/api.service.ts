@@ -14,14 +14,14 @@ export class ApiService {
     return this.http.get(`${this.baseUrl}/Events`);
     //CONSIDER CREATING AN EVENT INTERFACE
   }
-  createEvents(event: Event ){
+  createEvents(event:{title: string, description: string, date: string, location: string}){
     return this.http.post(`${this.baseUrl}/Events`, event);
   }
   getFavorites(userId: number){
     return this.http.get(`${this.baseUrl}/Favorites?userId=${userId}`);
   }
-  addToFavorites(userId: number, eventId: number){
-    return this.http.post(`${this.baseUrl}/Favorites`, userId)
+  addToFavorites(favorite:{userId: number, eventId: number}){
+    return this.http.post(`${this.baseUrl}/Favorites`, favorite)
   }
   removeFromFavorites(favoriteId: number, userId: number){
     return this.http.delete(`${this.baseUrl}/Favorites/${favoriteId}?userId=${userId}`)
