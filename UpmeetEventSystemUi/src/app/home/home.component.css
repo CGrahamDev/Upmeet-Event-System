@@ -1,10 +1,12 @@
-
+h1{
+    text-align: center;
+}
 
 
 .events{
     display:inline-block;
     border-style: solid;
-    background-color:#F0F0F0;
+    background-color:#EFEFEF;
     text-align:center;
     margin: 1em;
 }

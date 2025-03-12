@@ -6,7 +6,7 @@
    <!-- EVENT IMAGE MAYBE?-->
    <button type="button" class="collapsible"  (click)="event.isHidden=!event.isHidden" >see more</button>
    <button>Add to favorites</button> 
-   <div class="content" [hidden]="event.isHidden">
+   <div class="content" [hidden]="!event.isHidden">
         <p>{{event.description}}</p>
         <h3>{{event.date}},</h3>
         <h3>{{event.location}}</h3>
