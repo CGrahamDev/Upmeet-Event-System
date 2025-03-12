@@ -1,0 +1,16 @@
+nav{
+    font-size: 2.5em;
+    background-color: #e0e0e0;
+    border-style: solid;
+}
+nav > a {
+    line-height: 0.001em;
+    display: inline-block;
+    text-decoration: none;
+    padding: 15px;
+    margin: 15px;
+}
+nav > button {
+    text-align:right;
+    font-size:0.75em;
+}

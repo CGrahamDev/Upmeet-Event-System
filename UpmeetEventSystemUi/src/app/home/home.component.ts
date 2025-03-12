@@ -1,0 +1,36 @@
+import { CommonModule } from '@angular/common';
+import { Component, EventEmitter, OnInit } from '@angular/core';
+import { AppComponent } from '../app.component';
+import { ApiService } from '../services/api.service';
+import { Event } from '../Interfaces/event';
+
+@Component({
+  selector: 'app-home',
+  imports: [CommonModule],
+  templateUrl: './home.component.html',
+  styleUrl: './home.component.css'
+})
+export class HomeComponent implements OnInit {
+events: any[] = [];
+favorites: any[] = [];
+items : any[] = []
+constructor(private apiService: ApiService){};
+
+ngOnInit(): void {
+    this.apiService.getEvents().subscribe(data => {
+      this.events = data as any[];})
+      this.items = this.items.map(item => item.isHidden = true)
+    this.apiService.getFavorites().subscribe(data => {
+      this.favorites = data as any[];
+    })
+    
+    };
+    
+
+collapse(): void{};
+
+} 
+
+
+
+
