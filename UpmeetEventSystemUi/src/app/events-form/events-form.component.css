@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 h1{
     text-align: center;
 }
@@ -14,4 +15,9 @@ h1{
     border-style:groove;
    border-radius: 2px;
    background-color: #e0e0e0;
+=======
+.hidden{
+    display:none;
+    overflow: hidden;
+>>>>>>> a6f87de85b98a9ec6bb05de4958bcb4285966392
 }

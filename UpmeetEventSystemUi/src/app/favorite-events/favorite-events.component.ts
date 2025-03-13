@@ -18,27 +18,39 @@ event: Event = {id:-1,title:'',description:'',date:'',location:''};
 userId: number = 1;
 eventId: number = 0;
 favoriteId: number = 0;
-  
-constructor(private apiService: ApiService){};
+hasUserId:boolean =  false
+items: any[] =[];
+  constructor(private apiService: ApiService){};
 
 ngOnInit(): void {
-    this.apiService.getFavorites(this.userId).subscribe(data => {
-      this.favorites = data as Favorite[];
-    })
     this.apiService.getEvents().subscribe(data => {
       this.events = data as Event[];
     })
+    this.hasUserId=false;
+    this.items = this.items.map(item => item.isHidden = true)
 }
+
+getFavorites(){
+this.apiService.getFavorites(this.userId).subscribe(data => {
+  this.favorites = data as Favorite[];
+console.log("Successfully Received favorites");
+})}
 addToFavorites(): void{
-  this.apiService.addToFavorites(this.userId, this.eventId).subscribe(() => {
+  this.apiService.addToFavorites(
+    {
+      userId: this.userId,
+      eventId: this.eventId
+    }
+  ).subscribe(() => {
     alert('Event was successfully added to your favorites');
   })
 }
 
 removeFromFavorite(): void{
-  this.apiService.removeFromFavorites(this.userId, this.favoriteId).subscribe(() => {
+  this.apiService.removeFromFavorites(this.favoriteId, this.userId ).subscribe(() => {
     alert('Event was removed from favorites')
   })
+  console.log(`Removed Favorite ID: ${this.favoriteId} created by User ${this.userId}`)
 }
 }
 
