@@ -28,6 +28,7 @@ nav > button {
 footer{
     margin-top:2%;
     
+    
     background-color: #e0e0e0;
     border-style: solid;
 }
@@ -35,12 +36,16 @@ footer > p{
     font-size: 0.9em;
     text-align: center;
 }
-footer > img, footer >label{
+footer > a{
+    border-style: solid;
+    padding-left:25%;
     font-size: 1em;
     line-height: 0.001em;
     display: inline-block;
     text-decoration: none;
     padding: 1%;
-    margin: 1%;
+    margin-top: 0.5%;
+    margin-bottom:0.5%;
+    margin-left: 21%;
     
 }

@@ -26,6 +26,7 @@ form > input{
 form > textarea{
     box-sizing: border-box;
     margin-bottom: 2%;
+    overflow: scroll;
 }
 
 

@@ -1,7 +1,7 @@
 
 <!--Exists to make sure that when there is a valid userId, getFavorites will be called here instead of OnInit because that returns favorites based on the userId and it makes sense 
 to not call this method until we have a user Id for the user-->
-<form (submit)="getFavorites()">
+<form class="idSumbit" (submit)="getFavorites()">
 
     <label for="userId">User ID:</label>
     <input name="userId" id="userId" placeholder="Confirm ID to see events" [(ngModel)]="userId" required>
