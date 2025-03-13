@@ -24,3 +24,28 @@ nav > button {
     text-align:right;
     font-size:0.75em;
 }
+
+footer{
+    margin-top:2%;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    
+    background-color: #e0e0e0;
+    border-style: solid;
+}
+footer > p{
+    font-size: 0.9em;
+    text-align: center;
+}
+footer > a{
+    border-style: solid;
+    padding-left:25%;
+    font-size: 1em;
+    line-height: 0.001em;
+    display: inline-block;
+    text-decoration: none;
+    padding: 1%;
+    margin-top: 0.5%;
+    margin-bottom:0.5%;
+    margin-left: 21.3%;
+    
+}
