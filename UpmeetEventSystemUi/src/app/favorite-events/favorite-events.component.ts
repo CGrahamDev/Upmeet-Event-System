@@ -49,6 +49,7 @@ removeFromFavorite(): void{
   this.apiService.removeFromFavorites(this.favoriteId, this.userId ).subscribe(() => {
     alert('Event was removed from favorites')
   })
+  console.log(`Removed Favorite ID: ${this.favoriteId} created by User ${this.userId}`)
 }
 }
 

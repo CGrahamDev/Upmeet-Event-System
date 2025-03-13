@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, EventEmitter, OnInit } from '@angular/core';
+import { Component, EventEmitter, NgModule, OnInit } from '@angular/core';
 import { AppComponent } from '../app.component';
 import { ApiService } from '../services/api.service';
 import { Event } from '../Interfaces/event';
@@ -7,7 +7,7 @@ import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-home',
-  imports: [CommonModule, FormsModule],
+  imports: [CommonModule, FormsModule,],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })
@@ -38,6 +38,7 @@ ngOnInit(): void {
       ).subscribe(() => {
         alert('Event was successfully added to your favorites');
       })
+      console.log("Favorite successfully added")
     }
 
 
