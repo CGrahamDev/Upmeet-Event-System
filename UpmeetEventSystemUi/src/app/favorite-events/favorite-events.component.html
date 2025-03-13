@@ -1,23 +1,55 @@
-<ul *ngFor="let favorite of favorites">
-    <li>{{favorite.userId}}, {{favorite.eventId}}</li>
-</ul>
-
-<h3>Add to favorites</h3>
-<form (submit)="addToFavorites()">
-    <label for="eventId"> Event ID:</label>
-    <input type="number" id="eventId" [(ngModel)]="eventId" name="eventId" required>
-
+<!--Exists to make sure that when there is a valid userId, getFavorites will be called here instead of OnInit because that returns favorites based on the userId and it makes sense 
+to not call this method until we have a user Id for the user-->
+<form (submit)="getFavorites()">
     <label for="userId">User ID:</label>
-    <input type="=number" id="userId" [(ngModel)]="userId" name="userId" required>
-    <button type="submit"> Add</button>
+    <input name="userId" id="userId" placeholder="Confirm ID to see events" [(ngModel)]="userId" required>
+    <button type="submit" (click)="hasUserId=true">Confirm</button>
 </form>
 
-<h3>Remove from favorites</h3>
-<form (submit)="removeFromFavorite()">
-    <label for="favoriteId"> Favorite ID:</label>
-    <input type="number" id="favoriteId" [(ngModel)]="favoriteId" name="favoriteId" required>
+<h1>Your favorites:</h1>
+<hr>
+<!--Make it so that this displays when hasUserId is valid-->
 
-    <label for="userId">User ID:</label>
-    <input type="=number" id="userId" [(ngModel)]="userId" name="userId" required>
-    <button type="submit">Remove</button>
-</form>
+<div *ngIf="hasUserId==true">
+    <div class="events" *ngFor="let favorite of favorites">
+        <p>Favorite ID:{{favorite.id}} User ID:{{favorite.userId}}, Event ID:{{favorite.eventId}}</p>
+        <h2>{{favorite.title}}</h2>
+        <h3>{{favorite.eventDate | date: 'short'}}</h3>
+        <!-- EVENT IMAGE MAYBE?-->
+        <button type="button" (click)="favorite.isHidden=!favorite.isHidden">see more</button>
+        
+        <form class="favRemove" (submit)="removeFromFavorite()" [hidden]="!favorite.isHidden">
+            <label for="userId">Favorite ID:</label>
+            <input type="number" id="favoriteId" value="{{favorite.id}}" [(ngModel)]="favoriteId" name="favoriteId" readonly required>
+            <label for="userId">User ID:</label>
+            <input type="number" id="userId" value="userId" [(ngModel)]="userId" name="userId" readonly required>
+            <button type="submit" (click)="favoriteId=favorite.id">Remove From Favorites</button>
+        </form>
+        
+        <div class="content" [hidden]="!favorite.isHidden">
+            <p>{{favorite.description}}</p>
+            <h3>{{favorite.location}}</h3>
+        </div>
+    </div>   
+</div>
+        <h3>Add to favorites</h3>
+
+
+        <form (submit)="addToFavorites()">
+            <label for="eventId"> Event ID:</label>
+            <input type="number" id="eventId" [(ngModel)]="eventId" name="eventId" required>
+
+            <label for="userId">User ID:</label>
+            <input type="number" id="userId" [(ngModel)]="userId" name="userId" required>
+            <button type="submit"> Add</button>
+        </form>
+
+        <h3>Remove from favorites</h3>
+        <form (submit)="removeFromFavorite()">
+            <label for="favoriteId"> Favorite ID:</label>
+            <input type="number" id="favoriteId" [(ngModel)]="favoriteId" name="favoriteId" required>
+
+            <label for="userId">User ID:</label>
+            <input type="=number" id="userId" [(ngModel)]="userId" name="userId" required>
+            <button type="submit">Remove</button>
+        </form>

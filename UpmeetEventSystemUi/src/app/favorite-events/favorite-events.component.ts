@@ -17,16 +17,23 @@ events: Event[] = [];
 userId: number = 1;
 eventId: number = 0;
 favoriteId: number = 0;
+hasUserId:boolean =  false
+items: any[] =[];
   constructor(private apiService: ApiService){};
 
 ngOnInit(): void {
-    this.apiService.getFavorites(this.userId).subscribe(data => {
-      this.favorites = data as Favorite[];
-    })
     this.apiService.getEvents().subscribe(data => {
       this.events = data as Event[];
     })
+    this.hasUserId=false;
+    this.items = this.items.map(item => item.isHidden = true)
 }
+
+getFavorites(){
+this.apiService.getFavorites(this.userId).subscribe(data => {
+  this.favorites = data as Favorite[];
+console.log("Successfully Received favorites");
+})}
 addToFavorites(): void{
   this.apiService.addToFavorites(
     {

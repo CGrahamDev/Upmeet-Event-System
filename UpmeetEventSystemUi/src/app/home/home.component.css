@@ -1,8 +1,13 @@
 h1{
     text-align: center;
 }
-
-
+.inline-block{
+    display: inline-block;    
+}
+.favSubmit > label, .favSubmit > input{
+ display:none;
+ overflow: hidden;
+}
 .events{
     display:inline-block;
     border-style: solid;

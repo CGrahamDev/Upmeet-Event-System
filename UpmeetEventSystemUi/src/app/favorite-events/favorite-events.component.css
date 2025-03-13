@@ -1,0 +1,20 @@
+h1{
+    text-align: center;
+}
+.favRemove > label, .favRemove > input{
+    display:none;
+    overflow: hidden;
+   }
+
+.events{
+    display:inline-block;
+    border-style: solid;
+    background-color:#EFEFEF;
+    text-align:center;
+    margin: 1em;
+}
+.content{
+    border-style:groove;
+   border-radius: 2px;
+   background-color: #e0e0e0;
+}

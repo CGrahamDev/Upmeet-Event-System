@@ -2,6 +2,16 @@ nav{
     font-size: 2.5em;
     background-color: #e0e0e0;
     border-style: solid;
+    
+
+}
+nav > form{
+    
+    border-style:solid;
+    font-size:0.5em;
+    display:inline-block;
+    text-align: right;
+    
 }
 nav > a {
     line-height: 0.001em;
