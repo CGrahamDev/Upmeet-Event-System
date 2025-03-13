@@ -1,19 +1,8 @@
-<<<<<<< HEAD
-<ul *ngFor="let favorite of favorites">
-    <li >User Id:{{favorite.userId}},
-        Event Id:{{favorite.eventId}}</li>
-</ul>
 
-<h3>Add to favorites</h3>
-<form (submit)="addToFavorites()">
-    <label for="eventId"> Event ID:</label>
-    <input type="number" id="eventId" [(ngModel)]="eventId" name="eventId" required>
-
-=======
 <!--Exists to make sure that when there is a valid userId, getFavorites will be called here instead of OnInit because that returns favorites based on the userId and it makes sense 
 to not call this method until we have a user Id for the user-->
 <form (submit)="getFavorites()">
->>>>>>> a6f87de85b98a9ec6bb05de4958bcb4285966392
+
     <label for="userId">User ID:</label>
     <input name="userId" id="userId" placeholder="Confirm ID to see events" [(ngModel)]="userId" required>
     <button type="submit" (click)="hasUserId=true">Confirm</button>
