@@ -1,3 +1,45 @@
+h1{
+    text-align: center;
+}
+.form{
+    margin-left:25%;
+    margin-right:25%;
+    border-style:double;
+    padding-bottom: 5%;
+    background-color: #e0e0e0;
+}
+.form > form{
+    margin-top:2%;
+    margin-left:2%;
+    margin-right:2%;
+    text-align:center;
+
+}
+form >label{
+    display:block;
+}
+form > input{
+    margin-bottom: 2%;
+}
+form > textarea{
+    box-sizing: border-box;
+    margin-bottom: 2%;
+    overflow: scroll;
+}
+
+
+.events{
+    display:inline-block;
+    border-style: solid;
+    background-color:#EFEFEF;
+    text-align:center;
+    margin: 1em;
+}
+.content{
+    border-style:groove;
+   border-radius: 2px;
+   background-color: #e0e0e0;
+}
 .hidden{
     display:none;
     overflow: hidden;
