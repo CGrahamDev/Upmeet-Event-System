@@ -5,12 +5,9 @@ h1{
     display:none;
     overflow: hidden;
    }
-.t-align-center{
-    text-align: center;
-    color: #b0b0b0;
+.idSubmit{
+    margin-top:2%;
 }
-
-
 .events{
     display:inline-block;
     border-style: solid;
